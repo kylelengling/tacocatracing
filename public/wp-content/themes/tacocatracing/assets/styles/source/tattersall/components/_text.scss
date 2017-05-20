@@ -1,0 +1,41 @@
+.c__text {
+  color: $color-light;
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position-x: 9.333%;
+  background-position-y: 76%;
+  background-size: 22%;
+  padding: 40px 0;
+  p {
+    font-size: 1.375em;
+    padding: 0 10px;
+  }
+  .container {
+    display:flex;
+    align-items: center;
+  }
+}
+.c__text-content {
+  @include span(12);
+  padding-bottom: 40px;
+  padding-top: 30px;
+  text-align:center;
+  h1 {
+    font-size: 5.73125em;
+    padding-bottom: 0px;
+  }
+  h4 {
+    color: $color-light-grey;
+    font-size: ms(2);
+
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .c__text-content {
+    @include pad(1);
+    // padding-bottom: 120px;
+    // padding-top: 120px;
+  }
+}

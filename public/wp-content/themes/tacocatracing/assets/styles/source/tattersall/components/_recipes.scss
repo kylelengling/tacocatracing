@@ -1,0 +1,202 @@
+.c__recipes {
+  color: $color-light;
+  @include span(12);
+  position: relative;
+  padding-top: 30px;
+  @include clearfix;
+  text-align: center;
+  @media screen and (min-width: 940px){
+    @include pad(1);
+  }
+  @media screen and (min-width: 1200px) {
+    @include pad(2);
+  }
+}
+
+.c__recipes-content {
+  background-color: rgba(32,32,32,0.75);
+  padding-top: 40px;
+  @include clearfix;
+  @include pad(1);
+  position: relative;
+
+  .arrow-left {
+    left: 0px;
+    // position: relative;
+    float: none;
+    @media screen and (min-width: 640px) {
+      left: 20px;
+    }
+  }
+
+
+  .arrow-right {
+    // position: relative;
+    right: 0px;
+    float: none;
+    @media screen and (min-width: 640px) {
+      right: 20px;
+    }
+  }
+}
+
+.c__recipes-selector {
+  @include clearfix;
+}
+.c__recipes-heading {
+  @include pad(1);
+  margin-bottom: 80px;
+  p {
+    padding-bottom: 5px;
+  }
+  .c__recipes-headline {
+    @media screen and (min-width: 640px) {
+      font-size: 5.73125em;
+      padding-bottom: 0px;
+    }
+  }
+}
+
+
+.c__liquor-list {
+
+  font-size: 20px;
+  .c__liquor-link {
+    position: relative;
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    .is-selected {
+    &:before {
+      height: 1px;
+content: '\a0';
+background-color: $color-gold;
+top:-3px;
+width: 10px;
+left: 50%;
+position: absolute;;
+    }
+    &:after {
+      height: 1px;
+content: '\a0';
+background-color: $color-gold;
+top:-3px;
+width: 10px;
+right: 50%;
+position: absolute;;
+    }
+  }
+
+  }
+  .c__liquor-type {
+    display: inline;
+    color: $color-light;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+  .is-selected {
+    color: $color-gold;
+  }
+}
+
+.c__liquor-recipes-container {
+  display: none;
+
+}
+
+.c__recipes-details-container {
+  .is-selected {
+    @media screen and (min-width:640px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.c__liquor-recipes-list {
+  .c__liquor-recipe-link {
+
+    padding: 0 10px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  .c__liquor-recipe {
+    font-size: 1.0em;
+    display: inline;
+    color: $color-light;
+    &:hover {
+      color:$color-gold;
+    }
+  }
+}
+
+.c__recipes-details {
+  display: none;
+  @include span(12);
+  padding-top: 60px;
+  text-align: left;
+  @include clearfix;
+
+  @media screen and (max-width: 640px) {
+    padding-top: 20px;
+  }
+}
+
+
+
+ .c__recipes-instructions {
+  text-align:left;
+  @include span(6);
+  p {
+    @include span(11);
+    padding-left: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 37px;
+    @media screen and (min-width: 640px) {
+      padding-top: 46px;
+    }
+    li {
+      padding-left: 0;
+      list-style-type: none;
+    }
+  }
+  @media screen and (min-width: 640px) {
+    padding-right: 0px
+  }
+}
+
+  .c__recipe-image {
+  @include span(6);
+
+  @media screen and (min-width: 640px) {
+    padding-left: 0px;
+    img {
+      position: relative;
+      top: 10px;
+      max-width: 120%;
+    }
+  }
+  }
+
+@media screen and (max-width: 640px) {
+  .c__recipe-image, .c__recipes-instructions {
+    @include span(12);
+  }
+  .c__recipe-image {
+    display: block;
+  }
+}

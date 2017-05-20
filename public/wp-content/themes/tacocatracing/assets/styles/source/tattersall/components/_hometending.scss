@@ -1,0 +1,125 @@
+.c__hometending {
+  background-color: $color-light;
+  text-align: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  @include pad(1);
+  position: relative;
+margin-top: 100px;
+padding-top: 60px;
+padding-bottom: 60px;
+@include clearfix;
+
+  @media screen and (min-width: 640px) {
+    // display: flex;
+    @include pad(2);
+  }
+}
+
+.c__hometending-image {
+  @include span(12);
+  padding-left: 0px;
+  @media screen and (min-width: 640px) {
+    @include span(6);
+    padding-left: 0px;
+    img {
+      float: left;
+    }
+  }
+}
+
+.c__hometending-recipe {
+  @include clearfix;
+  margin-top: 20px;
+  align-items: center;
+  border-bottom: 1px solid $color-gold;
+  padding-bottom: 20px;
+  position: relative;
+  @media screen and (min-width: 640px) {
+    display: flex;
+  }
+
+}
+
+
+.c_hometending-recipe-body {
+  @include span(12);
+  padding-right: 0px;
+  color: $color-dark;
+  text-align: left;
+  position: relative;
+  @media screen and (min-width: 640px) {
+    @include span(6);
+  }
+}
+
+.c__hometending-heading-content {
+  color: $color-dark;
+  p {
+    padding-bottom: 0px;
+  }
+}
+.c__hometending-social {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  color: $color-gold;
+
+  ul.social {
+    display: inline;
+    list-style-type: none;
+    .social-icon-list {
+      font-family: $font-sans;
+      letter-spacing: .001em;
+      display: inline;
+      font-size: 1.25em;
+      .social-share {
+        position: relative;
+        bottom: 9px;
+      }
+      .social-icon {
+        display: inline;
+        fill: $color-gold;
+        border: 1px solid $color-gold;
+        &:hover {
+          fill: $color-white;
+          background-color: $color-gold;
+        }
+      }
+    }
+  }
+}
+
+.c__hometending-heading {
+  border-bottom: 1px solid $color-gold;
+  padding-bottom: 40px;
+  @media screen and (max-width: 640px) {
+    padding-bottom: 5px;
+  }
+}
+
+.c__icon-container {
+  padding: 10px 14px;
+position: absolute;
+top: -37px;
+left: 47%;
+border-radius: 50%;
+background-color: $color-dark;
+
+@media screen and (max-width: 640px) {
+  left: 45%;
+}
+
+@media screen and (max-width: 400px) {
+  left: 42%;
+}
+
+.c_tacocatracing-icon {
+  fill: $color-white;
+  position: relative;
+top: 5px;
+}
+}

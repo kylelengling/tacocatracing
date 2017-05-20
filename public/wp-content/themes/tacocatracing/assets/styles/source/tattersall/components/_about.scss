@@ -1,0 +1,154 @@
+.c__about {
+  @include span(12);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (min-width: 960px) {
+    @include pad(2);
+  }
+}
+
+.c__about-content {
+  @include pad(1);
+  margin-bottom: 10px;
+  .c__callout-description {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px $color-white;
+
+  }
+}
+
+.c__employees {
+  padding-bottom: 20px;
+
+  @media screen and (min-width: 640px) {
+    padding-bottom: 80px;
+  }
+}
+.c__employee-name {
+  color: $color-gold;
+}
+.c__about-headline {
+  font-size: 4em;
+}
+
+.c__employee {
+  min-height: 522px;
+  overflow: hidden;
+  position: relative;
+
+  html.no-touch & {
+    @include over {
+      .c__employee-bg {
+        transform: scale(1.1);
+        transition-duration: 10s;
+      }
+      .c__employee-overlay {
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        right: 0;
+        top: 0;
+        transition-duration: 0.3s;
+      }
+      .c__employee-details {
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 0.3s;
+      }
+    }
+  }
+  html.touch & {
+    .c__employee-overlay {
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+      right: 0;
+      top: 0;
+      transition-duration: 0.3s;
+    }
+    .c__employee-details {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+.c__employee-bg {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1);
+  transition: transform 1s $easeOutQuint;
+}
+
+.c__employee-overlay {
+  background-color: rgba($color-dark, 0.8);
+  bottom: 10px;
+  left: 10px;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.5s $easeOutQuint;
+}
+.c__employee-details {
+  opacity: 0;
+  padding: 20px;
+  position: relative;
+  text-align: left;
+  transform: translateY(10px);
+  transition: all 0.5s $easeOutQuint;
+
+  @media screen and (min-width: 760px) {
+    padding: 50px;
+  }
+}
+
+.c__employee-hover {
+  text-align: left;
+  @include pad(1);
+  padding-top: 40px;
+  display: none;
+  transition: $easeOutQuad 500ms all;
+
+}
+
+.c__about-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+top: 10px;
+padding-bottom: 0;
+
+.c_about-icon {
+  fill: $color-gold;
+}
+  &:before {
+    flex-grow: 1;
+ height: 1px;
+ content: '\a0';
+ background-color: $color-light;
+ position: relative;
+ top: 22px;
+ margin-right: 10px;
+  }
+  &:after {
+    flex-grow: 1;
+ height: 1px;
+ content: '\a0';
+ background-color: $color-light;
+ position: relative;
+ top: 22px;
+ margin-left: 10px;
+}
+}

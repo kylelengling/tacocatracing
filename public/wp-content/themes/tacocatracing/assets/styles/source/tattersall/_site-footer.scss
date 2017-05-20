@@ -1,0 +1,153 @@
+.site__footer {
+background-image: url('assets/images/tacocatracing_footer_bg.png');
+background-repeat: repeat-x;
+font-family: $font-serif;
+}
+
+.site__footer-map {
+  height: 210px;
+}
+
+.site__footer-info {
+  background-color: $color-light;
+  display: block;
+  width: 100%;
+}
+body.blog,
+body.single-post,
+body.archive {
+  .site__footer-info {
+    background-color: $color-white;
+  }
+}
+
+.site__footer-heading {
+  color: $color-grey;
+  padding: 0;
+  margin-top: 25px;
+  font-family: $font-sans;
+  font-size: ms(2);
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.site__footer-brand {
+  background-color: $color-dark;
+  display: block;
+  padding-bottom: 60px;
+  padding-top: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.site__footer-content {
+  @include span(12);
+  padding-top: 110px;
+  padding-bottom: 75px;
+}
+
+.site__footer-column {
+  @include span(12);
+  text-align: center;
+  a {
+    color: $color-light;
+  }
+  p {
+    color: $color-light;
+    padding: 0;
+  }
+}
+
+
+.footer-right {
+  padding-top: 40px;
+}
+@media screen and (min-width: 800px) {
+  .site__footer-column {
+    @include span(6);
+    text-align: left;
+  }
+  .footer-right {
+    padding-top: 0px;
+    text-align: right;
+  }
+}
+
+.footer-nav {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  .menu {
+
+    .menu-item {
+      display: inline-block;
+      @include span(6);
+      padding: 0 0 20px 0;
+      a {
+        color: $color-light;
+      }
+      &:nth-child(2n){
+      padding-left: 30px;
+      }
+    }
+  }
+}
+
+
+.site__footer-logo {
+  height: auto;
+  margin: 0 auto;
+  width: 290px;
+}
+
+.social {
+  display: block;
+  padding-top: 15px;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.social-icon-list {
+  margin: 0 5px;
+  margin-top: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.social-icon {
+  display: block;
+  height: 35px;
+  width: 35px;
+  fill: $color-light-brown;
+  border: 1px solid $color-light-brown;
+  padding: 5px;
+
+  @include over {
+    fill: $color-white;
+    background-color: $color-light-brown;
+
+  }
+}
+.icon-fill {
+  fill: $color-dark;
+  transition: all 0.5s $easeOutExpo;
+}
+.icon-stroke {
+  fill: $color-white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1.5;
+  transition: all 0.5s $easeOutExpo;
+}
+
+@media screen and (min-width: 960px) {
+  .site__footer-content {
+    @include pad(2);
+  }
+}

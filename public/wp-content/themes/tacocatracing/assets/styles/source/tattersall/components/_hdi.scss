@@ -1,0 +1,158 @@
+.c__hdi {
+}
+.c__hdi-container {
+  text-align: center;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  @include pad(1);
+  position: relative;
+
+  @media screen and (min-width: 640px) {
+    display: flex;
+    @include pad(2);
+  }
+}
+.c__hdi-content {
+  padding-top: 25px;
+}
+
+.c__hdi-headline {
+  font-size:  5.73125em;
+  padding-bottom: 0px;
+}
+
+.c__hdi-content,
+.c__hdi-image {
+  display: block;
+}
+.c__hdi-footer {
+  display: block;
+  padding-top: 40px;
+}
+
+.image--top,
+.image--bottom {
+  .c__hdi-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .c__hdi-content,
+  .c__hdi-image {
+    padding: 80px 0 30px;
+  }
+}
+.image--right,
+.image--left {
+  .c__hdi-container {
+    flex-direction: column;
+  }
+  @media screen and (min-width: 640px) {
+    &.image--normal {
+      .c__hdi-container {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+    &.image--overlap {
+      .c__hdi-container {
+        flex-direction: row;
+      }
+    }
+  }
+  .c__hdi-content,
+  .c__hdi-image {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    position: relative;
+
+    @media screen and (min-width: 640px) {
+      flex-basis: span(12);
+      padding: 50px 20px 30px;
+      @include pad(1);
+    }
+  }
+}
+.image--top {
+  .c__hdi-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    order: 2;
+    text-align: center;
+
+    .typography p {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+  }
+  .c__hdi-image {
+    order: 1;
+  }
+}
+.image--right {
+  .c__hdi-content {
+    order: 1;
+  }
+  .c__hdi-image {
+    order: 2;
+  }
+  &.image--overlap {
+    .c__hdi-image {
+      padding-bottom: 0;
+      padding-top: 0;
+      @media screen and (min-width: 640px) {
+        img {
+          bottom: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        img {
+          bottom: 40px;
+          right: 20px;
+        }
+      }
+    }
+  }
+}
+.image--bottom {
+  .c__hdi-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    order: 1;
+    text-align: center;
+
+    .typography p {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+  }
+  .c__hdi-image {
+    order: 2;
+  }
+}
+.image--left {
+  .c__hdi-content {
+    order: 2;
+  }
+  .c__hdi-image {
+    order: 1;
+  }
+  &.image--overlap {
+    .c__hdi-image {
+      padding-bottom: 0;
+      padding-top: 0;
+      @media screen and (min-width: 640px) {
+        img {
+          bottom: 0;
+          left: 0;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+.bg--dark {
+  color: $color-white;
+}

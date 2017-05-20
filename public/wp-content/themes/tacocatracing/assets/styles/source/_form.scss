@@ -1,0 +1,48 @@
+label {
+  display: block;
+  padding-bottom: 30px;
+
+  > span {
+    @extend %h6;
+    display: block;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-top: 0;
+  }
+}
+
+input:not([type=submit]):not([type=file]),
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  color: $color-dark;
+  font-family: $font-sans;
+  font-size: 1em;
+  line-height: normal;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 7px 5px;
+  white-space: nowrap;
+  width: 20em;
+  vertical-align: middle;
+  zoom: 1;
+
+  &::placeholder {
+    color: $color-border;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $color-light;
+  }
+}
+textarea {
+  @extend %p;
+  min-height: 100px;
+  resize: vertical;
+  width: 35em;
+}

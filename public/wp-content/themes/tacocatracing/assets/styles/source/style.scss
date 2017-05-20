@@ -1,0 +1,145 @@
+@import "base/reset";
+@import "base/ease";
+@import "base/functions";
+@import "base/mixins";
+@import "base/susy";
+@import "base/modular-scale";
+@import "tacocatracing/fonts";
+
+$font-sans: 'muncie', sans-serif;
+$font-serif: 'perpetua', serif;
+$ms-base: 1em;
+$ms-ratio: $major-third;
+
+$color-dark-blue: #334D5C;
+$color-teal: #45B29D;
+$color-gold: #f0b91a;
+$color-orange: #E37B3F;
+$color-coral: #DE5B49;
+$color-light: #fff9e6;
+$color-dark: #202020;
+$color-grey: #636363;
+$color-border: #dddddd;
+$color-white: #ffffff;
+$color-dark-grey: #878b8d;
+$color-light-grey: #a1a1a1;
+$color-brown: #534741;
+$color-light-brown: #6b571e;
+
+html {
+  background-color: $color-dark;
+  color: $color-dark;
+  font-family: $font-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.375;
+	min-height: 100vh;
+}
+
+body {
+  display: block;
+  position: relative;
+  @media screen and (max-width: 640px) {
+    overflow-x: hidden;
+  }
+}
+
+::selection {
+	background-color: $color-gold;
+	color: $color-white;
+}
+
+.container {
+  @include container;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content {
+  @include span(12);
+  padding-top: 40px;
+}
+.sidebar {
+  display: none;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.page-bg {
+  height: auto;
+  left: 0;
+  max-width: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    @include span(8);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sidebar {
+    @include span(4);
+    display: block;
+  }
+}
+
+.bg-video {
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  width: auto;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.bg-overlay {
+  background-color: rgba(#202020, 0.7);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+@import "typography";
+@import "form";
+
+@import "tacocatracing/animations";
+@import "tacocatracing/site-footer";
+@import "tacocatracing/site-header";
+@import "tacocatracing/buttons";
+@import "tacocatracing/overlay";
+
+@import "tacocatracing/blog";
+@import "tacocatracing/components/about";
+@import "tacocatracing/components/callout";
+@import "tacocatracing/components/columns";
+@import "tacocatracing/components/ctas";
+@import "tacocatracing/components/event";
+@import "tacocatracing/components/hdi";
+@import "tacocatracing/components/hero";
+@import "tacocatracing/components/hometending";
+@import "tacocatracing/components/icon";
+@import "tacocatracing/components/page-header";
+@import "tacocatracing/components/partner-list";
+@import "tacocatracing/components/partner-map";
+@import "tacocatracing/components/register";
+@import "tacocatracing/components/recipes";
+@import "tacocatracing/components/slider";
+@import "tacocatracing/components/spirits";
+@import "tacocatracing/components/squares";
+@import "tacocatracing/components/store-locator";
+@import "tacocatracing/components/text";
+@import "tacocatracing/components/tending";
+@import "tacocatracing/components/video";
+
+
+@import "base/remodal";

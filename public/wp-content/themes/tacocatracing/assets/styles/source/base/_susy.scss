@@ -1,0 +1,11 @@
+// Susy
+// ====
+
+@import 'susy/language/susy';
+
+$susy: (
+  columns: 12,
+  container: 1500px,
+  gutters: 40px/60px,
+  gutter-position: inside
+);

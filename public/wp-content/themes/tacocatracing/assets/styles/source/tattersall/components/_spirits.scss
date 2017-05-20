@@ -1,0 +1,212 @@
+.c__spirits {
+  color: $color-light;
+  @include span(12);
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+  @include clearfix;
+  @media screen and (min-width: 960px) {
+    @include pad(2);
+    }
+}
+
+.main-content-container {
+  @include clearfix;
+}
+
+.c__spirits-content {
+  display: flex;
+}
+
+.c__spirits-selector {
+  display: block;
+  float: left;
+  min-height: 225px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  .arrow-right {
+    right: -20px
+  }
+  .arrow-left {
+    left: -40px;
+  }
+}
+
+
+.c__spirits-body {
+  background-color: rgba($color-dark, 0.75);
+}
+
+
+.c__spirits-selector-outer {
+  height: 240px;
+  width: 100%;
+}
+
+.c__spirits-selector-wrapper {
+  float: left;
+}
+
+.c__spirits-body, .c__spirits-details-container, .c__spirits-details-outer, .c__spirits-details, .c__spirits-content, .c__spirits-container {
+
+  @include clearfix;
+}
+
+.c__spirits-detail-image {
+  float: left;
+  width: 125px;
+  @include span(2);
+display: none;
+  // margin-right: 50px;
+  @media screen and (max-width: 640px){
+    @include span(12);
+    display: flex;
+    justify-content: center;
+    margin-bottom:20px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.c__spirits-details {
+  display: none;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  // @include pad(1);
+
+}
+
+
+.c__spirits-heading {
+  text-align: center;
+  @include pad(1);
+
+
+}
+
+.c__spirit-headline {
+  @extend %h1;
+    color: $color-gold;
+    font-size: 4em;
+    padding-bottom: 0;
+    @media screen and (min-width: 440px) {
+      font-size: 5.0em;
+    }
+    @media screen and (min-width: 1230px) {
+      font-size: 5.5em;
+    }
+}
+
+.c__spirits-details-content {
+  @include clearfix;
+  background-repeat: no-repeat;
+  background-position: -15% 0;
+  background-size: 40%;
+  @media screen and (max-width: 640px) {
+    text-align: center;
+    background-image: none !important;
+  }
+  @media screen and (min-width: 640px) {
+    min-height: 380px;
+    padding-top: 25px;
+  }
+ }
+
+.c__spirits-copy {
+  @include span(8 of 12 last);
+  p {
+    padding-bottom: 0px;
+    padding-right: 10px;
+
+  }
+  @media screen and (max-width: 640px) {
+    @include span(12);
+    .c__spirit-detail-name {
+      font-size: 2.25em;
+    }
+  }
+  .c__spirit-detail-name {
+    padding-bottom: 0px;
+  }
+}
+
+
+
+.arrow-left {
+  float: left;
+  position: absolute;
+  left: -30px;
+  top: 30%;
+}
+
+.arrow-right {
+  float: right;
+  position: absolute;
+  right: -10px;
+  top: 30%;
+}
+
+.c__spirit {
+  cursor: pointer;
+  width: 55px;
+  text-align: center;
+  margin: 0 10px;
+  float: left;
+  @include clearfix;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    .c__spirit-name {
+      display: block;
+    }
+  }
+}
+.c__spirits-selector-outer {
+  overflow: hidden;
+}
+
+.c__spirits-selector-wrapper {
+  transition: $easeOutQuad 700ms all;
+  position: relative;
+  left:0;
+}
+
+
+
+.c__spirit-name {
+  display: none;
+}
+
+.c__spirit-border {
+  display: none;
+  background-color: $color-gold;
+  width: 20px;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.is-selected {
+  display: block;
+
+  .c__spirit-name {
+    display: block;
+    }
+  .c__spirit-border {
+    display: block;
+  }
+}
+
+.c__tasting-notes {
+  color: $color-gold;
+  font-size: 1.25em;
+  margin-top: 15px;
+}

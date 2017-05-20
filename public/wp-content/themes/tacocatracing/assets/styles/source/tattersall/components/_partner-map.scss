@@ -1,0 +1,33 @@
+.c__map-container {
+  @include pad(2);
+  position: relative;
+  text-align: center;
+}
+
+.c__map-headline {
+  font-size: 5.73125em;
+  padding-bottom: 0px;
+}
+
+ .c__map-subheadline {
+  color: $color-white;
+  padding-bottom: 0;
+  font-family: $font-sans;
+
+}
+
+.c__partner-map {
+  background-color: $color-light;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 535px;
+  width: 100%;
+  margin-top: 20px;
+  border: 8px solid $color-white;
+
+  @media screen and (min-height: 800px) {
+    height: 620px;
+  }
+}

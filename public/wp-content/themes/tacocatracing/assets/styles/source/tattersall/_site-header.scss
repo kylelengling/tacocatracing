@@ -1,0 +1,245 @@
+.site__header {
+  z-index: 10;
+  font-family: perpetua, sans-serif;
+  position: relative;
+  font-size: .98em;
+}
+
+.site__header-logo {
+  display: block;
+  margin:auto;
+  padding-top: 10px;
+  width: 215px;
+
+  @include over {
+    background: transparent;
+  }
+  @media screen and (min-width: 760px) {
+    padding-top: 0;
+  }
+  @media screen and (min-width: 960px) {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+.menu-main-container {
+  position: relative;
+  width: 100%;
+  a {
+    color: $color-white;
+  }
+  @media screen and (min-width: 760px) {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  @media screen and (min-width: 960px) {
+    a {
+      font-size: 1em;
+      line-height: 60px;
+      letter-spacing: 0.5px;
+      padding: 0;
+    }
+  }
+}
+.site__header-menu-toggle {
+  border: 1px solid #6b571e;
+  color: #6b571e;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 5px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 22px;
+  width: 35px;
+
+  @media screen and (min-width: 760px) {
+    display: none;
+  }
+
+  &.nav-open {
+
+  }
+  &.nav-close {
+
+  }
+
+  @include over {
+    background-color: #6b571e;
+    color: $color-white;
+  }
+}
+
+.site__header .nav {
+  padding-top: 10px;
+  text-align: left;
+
+  .menu-item {
+    display: block;
+    text-transform: uppercase;
+    height: 100%;
+    padding: 0 15px;
+    position: relative;
+    text-align: center;
+
+    &.logo {
+      display: block;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+    }
+    .sub-menu {
+      display: block;
+      background-color: $color-dark;
+      width: inherit;
+      padding: 0;
+      line-height: 1;
+
+      li {
+        text-transform: capitalize;
+        padding: 0;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          line-height: 28px;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (max-width: 761px) {
+    > .menu-item {
+      display: none;
+      a {
+        font-size: ms(1);
+      }
+    }
+    .nav-open {
+      display: block;
+    }
+    .nav-close {
+      display: none;
+    }
+    &:target,
+    &.is-open {
+      background-color: $color-dark;
+      > .menu-item {
+        display: block;
+      }
+      .nav-open {
+        display: none;
+      }
+      .nav-close {
+        display: block;
+      }
+    }
+  }
+  @media screen and (min-width: 760px) {
+    text-align: center;
+
+    .menu-item {
+      display: inline-block;
+
+
+      .sub-menu {
+        box-shadow: 2px 3px 0.86px 0.14px rgba(0, 0, 0, 0.11);
+        position: absolute;
+        display: none;
+        padding: 0 10px;
+        text-align: center;
+        min-width: 150px;
+
+        .menu-item {
+          border-bottom: 1px solid $color-gold;
+          white-space: nowrap;
+          @include over {
+            box-shadow: none;
+          }
+          a {
+            line-height: 45px;
+            @include over {
+              color: $color-light;
+            }
+          }
+        }
+      }
+      $elements: 15;
+      @for $i from 0 to $elements {
+        &:nth-child(#{$i}) {
+          order: $i;
+        }
+      }
+      &:nth-child(n){
+        .sub-menu {
+         left: 0px;
+        }
+      }
+      &:nth-child(5){
+        .sub-menu {
+          left:initial;
+          right: 0;
+        }
+      }
+      &:last-of-type {
+        .sub-menu {
+          left: initial;
+          right: 0;
+        }
+      }
+      @include over {
+        &:not(.logo) {
+          background-color: $color-dark;
+          box-shadow: 2px 3px 0.86px 0.14px rgba(0, 0, 0, 0.11);
+        }
+        &.menu-item-has-children {
+          &:after {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid $color-gold;
+            bottom: 6px;
+            content: '';
+            height: 0;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: 0;
+          }
+        }
+        .sub-menu {
+          z-index: 10;
+          background-color: $color-dark;
+
+          display: list-item;
+
+          .menu-item {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 960px) {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+
+    .menu-item {
+      display: block;
+    }
+  }
+
+}
+
+.main-content-container {
+  overflow: hidden;
+  position: relative;
+}

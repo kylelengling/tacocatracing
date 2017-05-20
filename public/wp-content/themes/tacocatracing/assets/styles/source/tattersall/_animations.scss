@@ -1,0 +1,23 @@
+@keyframes overlayFade {
+  0%{
+    background-color: rgba($color-coral, 0.8);
+  }
+  50%{
+    background-color: rgba($color-orange, 0.8);
+  }
+  100%{
+    background-color: rgba($color-coral, 0.8);
+  }
+}
+
+@keyframes overlayBorderFade {
+  0%{
+    border-color: transparent transparent rgba($color-coral, 0.8) transparent;
+  }
+  50%{
+    border-color: transparent transparent rgba($color-orange, 0.8) transparent;
+  }
+  100%{
+    border-color: transparent transparent rgba($color-coral, 0.8) transparent;
+  }
+}

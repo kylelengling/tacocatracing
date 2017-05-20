@@ -1,0 +1,106 @@
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid $color-white;
+  border-radius: 0;
+  color: $color-gold;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-sans;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+  outline: none;
+  padding: 13px 20px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.5s $easeOutExpo;
+
+  @media screen and (min-width: 768px) {
+    font-size: em(20px);
+    padding: 23px 40px;
+  }
+
+  @include over {
+    background: $color-gold;
+    border-color: $color-gold;
+    color: $color-white;
+    transition-duration: 0.1s;
+  }
+}
+
+.btn--video {
+  padding-left: 60px;
+  @media screen and (min-width: 768px) {
+    padding-left: 70px;
+  }
+  &:before {
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 30px;
+    left: 10px;
+    position: absolute;
+    top: 5px;
+    transition: all 0.5s $easeOutExpo;
+    width: 30px;
+
+    @media screen and (min-width: 768px) {
+      height: 38px;
+      left: 20px;
+      top: 15px;
+      width: 38px;
+    }
+  }
+
+  &:after {
+    border-color: transparent transparent transparent $color-white;
+    border-style: solid;
+    border-width: 8px 0 8px 12px;
+    content: '';
+    display: block;
+    height: 0;
+    left: 21px;
+    position: absolute;
+    top: 12px;
+    transition: all 0.5s $easeOutExpo;
+    width: 0;
+
+    @media screen and (min-width: 768px) {
+      left: 35px;
+      top: 26px;
+    }
+  }
+
+  @include over {
+    &:before {
+      border-color: $color-teal;
+      transition-duration: 0.1s;
+    }
+    &:after {
+      border-color: transparent transparent transparent $color-teal;
+      transition-duration: 0.1s;
+    }
+  }
+}
+
+.btn--small {
+  padding: 10px;
+  @media screen and (min-width: 768px) {
+    padding: 10px 30px;
+  }
+}
+
+.btn--secondary {
+  background: transparent;
+  color: $color-teal;
+
+  @include over {
+    background: $color-teal;
+    border-color: $color-teal;
+    color: $color-white;
+  }
+}

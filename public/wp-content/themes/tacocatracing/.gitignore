@@ -1,0 +1,5 @@
+node_modules
+tmp
+.sass_cache
+
+assets/styles/build

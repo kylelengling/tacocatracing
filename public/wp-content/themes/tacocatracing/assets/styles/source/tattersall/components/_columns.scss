@@ -1,0 +1,71 @@
+.c__columns {
+  display: block;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  text-align: center;
+
+  .c__ctas {
+    padding-bottom: 40px;
+  }
+}
+
+.c__columns-header {
+  @include span(12);
+  @include pad(1);
+}
+
+.c__column {
+  @include span(12);
+  // padding-top: 40px;
+
+  p {
+    margin: 0 auto;
+  }
+}
+
+.c__columns-content {
+  @include span(12);
+  padding-bottom: 40px;
+  @include pad(1);
+  text-align: left;
+  @media screen and (min-width: 800px) {
+    @include pad(3);
+  }
+}
+
+
+
+.c__columns--1 {
+  text-align: center;
+}
+
+.c__column-headline {
+  color: $color-gold;
+}
+
+@media screen and (min-width: 800px) {
+  .c__columns-header {
+    @include pad(3);
+  }
+  .c__columns--2 .c__column {
+    @include span(6);
+  }
+  .c__columns--3 .c__column {
+    @include span(4);
+  }
+  .c__columns--4 .c__column {
+    @include span(6);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .c__columns--2 .c__column {
+    @include span(6);
+  }
+  .c__columns--3 .c__column {
+    @include span(4);
+  }
+  .c__columns--4 .c__column {
+    @include span(3);
+  }
+}

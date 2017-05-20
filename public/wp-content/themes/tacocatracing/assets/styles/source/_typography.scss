@@ -1,0 +1,279 @@
+@mixin heading($size: 1) {
+  display: block;
+  font-family: $font-sans;
+  font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
+  font-size: ms(1);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 0 0 0.35em;
+  letter-spacing: .05em;
+
+  @if $size == 0 {
+    font-size: em(12px);
+    @media screen and (min-width: 640px) {
+      font-size: em(14px);
+    }
+  } @elseif $size == 1 {
+    font-size: em(14px);
+    @media screen and (min-width: 640px) {
+      font-size: 1em;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: ms($size);
+    }
+  } @elseif $size == 2 {
+    @media screen and (min-width: 1024px) {
+      font-size: ms($size);
+    }
+  } @elseif $size > 2 {
+    @media screen and (min-width: 640px) {
+      font-size: ms($size - 2);
+    }
+    @media screen and (min-width: 768px) {
+      font-size: ms($size - 1);
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: ms($size);
+    }
+  }
+}
+%h1 {
+  @include heading(5);
+  color: $color-gold;
+}
+%h2 {
+  @include heading(4);
+}
+%h3 {
+  @include heading(3);
+  font-family: $font-serif;
+  text-transform: uppercase;
+}
+%h4 {
+  @include heading(2);
+  font-family: $font-serif;
+  text-transform: uppercase;
+}
+%h5 {
+  @include heading(1);
+  font-family: $font-serif;
+  text-transform: uppercase;
+}
+%h6 {
+  @include heading(0);
+  font-family: $font-serif;
+  text-transform: uppercase;
+}
+%p {
+  font-feature-settings: 'kern', 'onum', 'liga';
+  font-size: 1em;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+  padding: 0 0 0.8em 0;
+  @media screen and (min-width: 1024px) {
+    font-size: ms(1);
+  }
+}
+%blockquote {
+  border-left: 2px solid $color-border;
+  font-feature-settings: 'kern', 'onum', 'liga';
+  font-family: $font-sans;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  padding: 0 20px;
+  margin: 18px 0;
+}
+%list {
+  padding: 20px 0 20px 40px;
+}
+%li {
+  display: list-item;
+  font-feature-settings: 'kern', 'onum', 'liga';
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 5px;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.h1 { @extend %h1; }
+.h2 { @extend %h2; }
+.h3 { @extend %h3; }
+.h4 { @extend %h4; }
+.h5 { @extend %h5; }
+.h6 { @extend %h6; }
+.p { @extend %p; }
+.li { @extend %li; }
+.blockquote { @extend %blockquote; }
+
+strong, b {
+  font-weight: 700;
+}
+em, i {
+  font-style: italic;
+}
+small {
+  font-size: 0.707em;
+}
+sup {
+  font-size: 0.875em;
+  line-height: 0;
+  position: relative;
+  top: -0.5em;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+  font-size: 0.875em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+ins {
+  text-decoration: underline;
+}
+mark {
+  background-color: rgba($color-coral, 0.35);
+}
+code, kbd, pre, samp {
+  font-family: monospace;
+  font-size: 0.90em;
+}
+code {
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  color: #c7254e;
+  padding: 2px 4px;
+}
+pre {
+  background-color: $color-light;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  display: block;
+  padding: 10px;
+  margin-bottom: 1em;
+  line-height: 1.375;
+  color: $color-dark;
+  word-break: break-all;
+  word-wrap: break-word;
+
+  code {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    white-space: pre-wrap;
+  }
+}
+caption,
+th,
+td {
+  font-size: ms(0);
+  font-weight: 300;
+}
+table {
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  width: 100%;
+
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid $color-border;
+    padding: 8px;
+  }
+
+  th {
+    font-size: em(10px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  tbody {
+    border-color: inherit;
+    display: table-row-group;
+    vertical-align: middle;
+  }
+  tr {
+    border-color: inherit;
+    display: table-row;
+    vertical-align: inherit;
+  }
+  td {
+    border-top: 1px solid $color-border;
+    line-height: 1.35;
+    padding: 8px;
+    vertical-align: top;
+  }
+  tr:nth-child(odd) > td {
+    background-color: $color-light;
+  }
+}
+
+dl {
+  margin-bottom: 0.75em;
+  padding-left: 0;
+}
+dt {
+  font-weight: 600;
+}
+dd {
+  margin-bottom: 0.5em;
+}
+hr {
+  background-color: $color-coral;
+  border: 0;
+  height: 1px;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.typography {
+  color: $color-light;
+  h1 { @extend %h1; }
+  h2 { @extend %h2; }
+  h3 { @extend %h3; }
+  h4 { @extend %h4; }
+  h5 { @extend %h5; }
+  h6 { @extend %h6; }
+
+  p { @extend %p; }
+  ul, ol { @extend %list; }
+  ul li {
+    @extend %li;
+    list-style-type: disc;
+  }
+  ol {
+    counter-reset: section;
+    list-style-type: none;
+  }
+  ol li {
+    @extend %li;
+    list-style-type: decimal;
+  }
+  blockquote { @extend %blockquote; }
+}
+a {
+  color: $color-gold;
+  text-decoration: none;
+  transition: all 0.5s $easeOutExpo;
+
+  @include over {
+    color: $color-gold;
+    transition-duration: 0.1s;
+  }
+}

@@ -1,0 +1,114 @@
+.c__sliders {
+  position: relative;
+  background-color: $color-light;
+  padding: 40px 0;
+  border-top: 5px solid $color-light;
+  border-bottom: 5px solid $color-light;
+  background-position: center;
+
+  .arrow-right, .arrow-left {
+    background-color: $color-dark;
+    padding: 20px 14px;
+    padding-bottom: 13px;
+
+  }
+  .arrow-right {
+    right: 15px;
+    top: 29%;
+  }
+  .arrow-left {
+    left: -30px;
+  }
+
+  @media screen and (max-width: 640px) {
+    background-image: none !important;
+    .arrow-right {
+      right: -13px
+    }
+    .arrow-left {
+      left: -15px;
+    }
+
+  }
+  .controlls {
+    top: 130px;
+  }
+.container {
+
+   @include pad(1);
+   display:flex;
+   align-items: center;
+  @media screen and (max-width: 640px) {
+    @include pad(0);
+  }
+  @media screen and (min-width: 1200px) {
+    @include pad(2);
+
+  }
+
+ }
+}
+.c__sliders-selector {
+  display: flex;
+  align-items: center;
+  @include clearfix;
+  position: relative;
+  @include span(12);
+}
+
+.c__sliders-container {
+  @include span(12);
+  @include clearfix;
+  overflow: hidden;
+}
+
+.c__sliders-selector-container {
+  position: relative;
+  @media screen and (max-width: 640px) {
+    @include span(12);
+
+  }
+}
+
+.c__sliders-wrapper{
+position: relative;
+@include clearfix;
+transition: $easeInSine 500ms left;
+}
+
+
+.c__slider {
+  @include span(12);
+  @media screen and (min-width: 640px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.c_slider-image {
+  @include span(6);
+  @media screen and (max-width: 640px) {
+    @include span(12);
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.c_slider-content {
+  @include span(6);
+  color: $color-dark;
+  padding-right: 2.6666667;
+
+  @media screen and (max-width: 640px) {
+    @include span(12);
+  }
+}
+
+.btn--slider {
+  background-color: $color-gold;
+  color:$color-light;
+  font-family: $font-serif;
+  font-size: 1.15em;
+  padding: 15px 40px;
+}
